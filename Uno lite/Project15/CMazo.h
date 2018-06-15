@@ -1,7 +1,7 @@
 #pragma once
 #include "CCarta.h"
 
-
+//#include <algorithm> 
 using namespace System;
 using namespace System::Drawing;
 
@@ -144,4 +144,15 @@ public:
 		cartas[cs]->setPosX(posAX);
 		cartas[cs]->setPosY(posAY);
 	};
+	void combinarcartas() {
+		
+		for (int i = 0; i < 40; i++) {
+			Random r;
+			int a = r.Next(0, 40);
+			int b = r.Next(0, 40);
+			cartas[55] = cartas[b];
+			cartas[b] = cartas[a];
+			cartas[a]=cartas[55];
+		}
+	}
 };
