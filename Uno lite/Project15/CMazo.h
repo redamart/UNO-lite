@@ -151,7 +151,11 @@ public:
 			int a = r.Next(0, 40);
 			int b = r.Next(0, 40);
 			cartas[55] = cartas[b];
+			cartas[b]->setPosX(cartas[b]->getPosX);
+			cartas[b]->setPosY(cartas[b]->getPosY);
 			cartas[b] = cartas[a];
+			cartas[b]->setPosX(cartas[b]->getPosX);
+			cartas[55]->setPosY(cartas[b]->getPosY);
 			cartas[a]=cartas[55];
 		}
 	}
