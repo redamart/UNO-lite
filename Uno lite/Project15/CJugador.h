@@ -1,20 +1,20 @@
-/*#pragma once
+#pragma once
 #include <vector>
 #include "CCarta.h"
 #include <string>
 
-using namespace std;
+
 using namespace System;
 using namespace System::Drawing;
 
-class CJugador {
+public ref class CJugador {
 private:
 	int puntos;
 	int turno;
-	string nombre;
-	vector<CCarta^> cartas;
+	String^ nombre;
+	array<CCarta^> ^cartas;
 public:
-	CJugador(int puntos, int turno, string nombre, vector<CCarta^> cartas) {
+	CJugador(int puntos, int turno, String^ nombre) {
 		this->puntos = puntos;
 		this->turno = turno;
 		this->nombre = nombre;

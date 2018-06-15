@@ -19,7 +19,7 @@ public:
 	CMazo() {
 		in = 50;
 		mazodibujado = false;
-		cartas = gcnew array<CCarta^>(55);
+		cartas = gcnew array<CCarta^>(56);
 	//Rellenando cartas azules	
 	for (int i = 0; i <= 12; i++) {
 		switch (i+1) {
@@ -98,6 +98,7 @@ public:
 	cartas[53] = gcnew CCarta(4, 50, "imagenes/wild_pick_four.png");
 	//Detalle de carta
 	cartas[54] = gcnew CCarta(5, 0, "imagenes/card_back.png");
+	cartas[55] = gcnew CCarta(0,0,"imagenes/card_back.png");
 	}
 	void shufle() {	}
 	void dibujarmazo(BufferedGraphics ^buffer) {
@@ -146,17 +147,17 @@ public:
 	};
 	void combinarcartas() {
 		
-		for (int i = 0; i < 40; i++) {
+		
 			Random r;
+			
+			
 			int a = r.Next(0, 40);
 			int b = r.Next(0, 40);
-			cartas[55] = cartas[b];
-			cartas[b]->setPosX(cartas[b]->getPosX);
-			cartas[b]->setPosY(cartas[b]->getPosY);
-			cartas[b] = cartas[a];
-			cartas[b]->setPosX(cartas[b]->getPosX);
-			cartas[55]->setPosY(cartas[b]->getPosY);
-			cartas[a]=cartas[55];
-		}
+			
+			
+			cartas[55]->setValores(cartas[b]->getColor(), cartas[b]->getValor(), cartas[b]->getruta());
+			cartas[b]->setValores(cartas[a]->getColor(), cartas[a]->getValor(), cartas[a]->getruta());
+			cartas[a]->setValores(cartas[55]->getColor(), cartas[55]->getValor(), cartas[55]->getruta());
+		
 	}
 };

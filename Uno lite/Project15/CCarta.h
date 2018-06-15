@@ -34,6 +34,17 @@ public:
 	int getPosX() { return this->posX; }
 	void setPosY(int posY) { this->posY = posY; }
 	int getPosY() { return this->posY; }
+	void setRuta(String^ ruta) {
+		this->ruta = ruta;
+	}
+	String^ getruta() {
+		return ruta;
+	}
+	void setValores(int color, int valor, System::String^ ruta) {
+		this->color = color;
+		this->valor = valor;
+		this->ruta = ruta;
+	}
 	
 	void dibujar(BufferedGraphics ^buffer) {
 
