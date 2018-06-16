@@ -138,6 +138,7 @@ namespace Project15 {
 			buffer->Graphics->DrawImage(bm_world, todaPantalla, 0, 0, this->Size.Width, this->Size.Height, GraphicsUnit::Pixel);
 			//bm_world->MakeTransparent(bm_world->GetPixel(1, 1));
 		
+			int n = Size.Width;
 		}
 		
 	private: System::Void MyForm_Load(System::Object^  sender, System::EventArgs^  e) {

@@ -1,7 +1,7 @@
 #pragma once
-#include <vector>
+
 #include "CCarta.h"
-#include <string>
+
 
 
 using namespace System;
@@ -13,6 +13,10 @@ private:
 	int turno;
 	String^ nombre;
 	array<CCarta^> ^cartas;
+
+	//aqui el juagdor tendra sus cartasque se agregan o disminuyen
+
+
 public:
 	CJugador(int puntos, int turno, String^ nombre) {
 		this->puntos = puntos;
@@ -29,10 +33,9 @@ public:
 	int getPuntos() { return this->puntos; }
 	void setTurno(int turno) { this->turno = turno; }
 	int getTurno() { return this->turno; }
-	void setNombre(string nombre) { this->nombre = nombre; }
-	string getNombre() { return this->nombre; }
-	void setcartas(vector<CCarta^>cartas) { this->cartas = cartas; }
-	vector<CCarta^>getcartas() { return this->cartas; }
+	void setNombre(String^ nombre) { this->nombre = nombre; }
+	String^ getNombre() { return this->nombre; }
+	
 	void cogerCarta() {};
 	void colocarCarta() {};
 

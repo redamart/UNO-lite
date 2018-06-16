@@ -50,11 +50,10 @@ public:
 
 		
 		Bitmap^ bm = gcnew Bitmap(ruta);
-		//bm->MakeTransparent(bm->GetPixel(1, 1));
+		
 		int anchoImagen = bm->Width;
 		int altoImagen = bm->Height;
-		//canvas->Clear(Color::Red);
-		// Declaramos un rectangulo con las dimensiones del pedazo del sprite a utilizar  
+		
 		Rectangle porcionAUsar = Rectangle(0, 0, anchoImagen, altoImagen);
 		// Dibujamos la imagen en la posicion 50, 50
 		buffer->Graphics->DrawImage(bm, posX, posY, porcionAUsar, GraphicsUnit::Pixel);
@@ -62,6 +61,12 @@ public:
 
 
 };
+
+//Vamos a hacer sin herencia sino gg
+
+
+
+
 /*
 class CRobados : public ref CCarta {
 public:
