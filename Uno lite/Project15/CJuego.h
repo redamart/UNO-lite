@@ -14,12 +14,30 @@ private:
 	CEscenario ^ esc;
 	CMazo^ mazo;
 public:
-	CJuego(array<CJugador^> ^jugadores, CEscenario^ esc, CMazo^ mazo) {
-		
+	CJuego() {
+		mazo = gcnew CMazo();
+		esc = gcnew CEscenario();
+		jugadores = gcnew array<CJugador^>(4);
 	}
+
+	void Start(BufferedGraphics ^buffer, int sw, int sh) {
+		esc->dibujarfondo(buffer, sw, sh);
+		mazo->dibujarmazo(buffer);
+	}
+	void cogercarta() {
+
+	}
+
+
+
+
+
+
 	~CJuego() {
 	
 		}
+
+
 		
 	void penalizar() {};
 };

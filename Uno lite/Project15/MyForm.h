@@ -23,7 +23,7 @@ namespace Project15 {
 	{
 	private:
 		
-		CMazo^ mazo;
+		CJuego ^ Uno;
 		int n;
 	private: System::Windows::Forms::Button^  button1;
 	private: System::Windows::Forms::Button^  button2;
@@ -37,8 +37,7 @@ namespace Project15 {
 			//
 			//TODO: agregar código de constructor aquí
 
-			mazo = gcnew CMazo();
-			n = 0;
+			Uno = gcnew CJuego();
 			
 
 			
@@ -150,10 +149,8 @@ namespace Project15 {
 		BufferedGraphicsContext ^espacioBuffer = BufferedGraphicsManager::Current;
 		BufferedGraphics ^buffer = espacioBuffer->Allocate(g, this->ClientRectangle);
 		
-		dibujarfondo(buffer);
-
-		mazo->dibujarmazo(buffer);
-
+		
+		Uno->Start(buffer, Size.Width, Size.Height);
 		
 		buffer->Render(g);
 		delete buffer;
@@ -162,16 +159,16 @@ namespace Project15 {
 	}
 private: System::Void button1_Click_1(System::Object^  sender, System::EventArgs^  e) {
 	
-	mazo->cogercarta();
+
 	
 	
 	//
 }
 private: System::Void button2_Click(System::Object^  sender, System::EventArgs^  e) {
-	mazo->devolvercarta();
+	
 }
 private: System::Void button3_Click(System::Object^  sender, System::EventArgs^  e) {
-	mazo->combinarcartas();
+
 }
 };
 }

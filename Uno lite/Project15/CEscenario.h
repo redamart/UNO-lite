@@ -9,9 +9,7 @@ private:
 	int Y;
 	Bitmap^ bm_world;
 public:
-	CEscenario(int X, int Y) {
-		this->X = X;
-		this->Y = Y;
+	CEscenario() {
 		bm_world = gcnew Bitmap("imagenes/esce.jpg");
 	};
 	void dibujarfondo(BufferedGraphics ^buffer, int sw, int sh) {
